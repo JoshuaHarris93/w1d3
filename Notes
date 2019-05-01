@@ -18,7 +18,7 @@ var weather = ['sun', 'rain', 'sun', 'rain', 'rain', 'rain' ]
 var weatherStat = {};
 
 weather.forEach(function(el) {
-    var keyExist = weatherStat.hasOWnProperty(el);
+    var keyExist = weatherStat.hasOwnProperty(el);
     if (keyExist) {
         weatherStat[el] += 1;
     } else {
