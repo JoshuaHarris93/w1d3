@@ -1,0 +1,64 @@
+//stack memory is faster
+//heap memory is slower
+
+//Ex. (how to find 'x')
+
+var words = ['exist', 'exit', 'exaggerate', 'xylophone', 'xenomorph']
+
+var xPos = {};
+
+words.forEach(function(el, i)) {
+    xPos[el] = el.indexOf('x');
+}
+
+//Ex #2 (counting number of times a word is in an array)
+
+var weather = ['sun', 'rain', 'sun', 'rain', 'rain', 'rain' ]
+
+var weatherStat = {};
+
+weather.forEach(function(el) {
+    var keyExist = weatherStat.hasOWnProperty(el);
+    if (keyExist) {
+        weatherStat[el] += 1;
+    } else {
+    weatherStat[el] = 1
+    }
+});
+
+console.log(weatherStat);
+
+//ex. 3 - .call calls the robot variable
+
+var robot = {
+    name: 'BB8',
+    sound: 'bipbip',
+    speak: function() {
+        console.log(this.sound);
+    }
+
+}
+
+function say() {
+    console.log(this, this.name + " says" + robot.sound);
+}
+
+console.log(say.call(robot));
+
+//ex.4 different way of using above code
+
+var robot = {
+    name: 'BB8',
+    sound: 'bipbip',
+    speak: function() {
+        console.log(this.sound);
+    }
+
+}
+
+function say() {
+    console.log(this, this.name + " says" + robot.sound);
+}.bind(robot);
+
+console.log(say());
+
